@@ -1,0 +1,185 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+
+/* layout */
+:root {
+  --primary: #000075;
+  --error: #e7195a;
+}
+body {
+  background: #f1f1f1;
+  margin: 0;
+  font-family: "Poppins";
+}
+header {
+  background: #fff;
+}
+header .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--primary);
+}
+header a {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+img {
+  max-height: 80px;
+  max-width: auto;
+}
+
+
+
+/* homepage */
+.home {
+  display: flex;
+  gap: 100px;
+  margin: 0 5%;
+}
+
+.details {
+  width: 25%;
+}
+
+.employees {
+  width: 75%;
+}
+@media screen and (max-width: 728px) {
+  .home {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    gap: 20px;
+    padding: 0;
+  }
+  .details {
+    width: 75%;
+  }
+  
+  .employees {
+    width: 75%;
+  }
+  .employee-details {
+    margin: 10px auto;
+    padding: 10px;
+    display: flex;
+    gap: 8px;
+  }
+  .employee-details h4 {
+    margin: 0 0 10px 0;
+  }
+  .employee-details p {
+    margin: 0;
+  }
+  .employee-details .upd {
+    margin: 5px;
+    top: 25px;
+    right: 5px;
+    padding: 6px;
+  }
+  .create {
+    margin: 0;
+    padding: 0;
+  }
+
+
+
+  @media screen and (max-width: 400px) {
+    .employee-details {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start !important;
+    }
+
+
+  }
+/* ------------------------------ */
+}
+.employee-details {
+  background: #fff;
+  border-radius: 4px;
+  margin: 20px auto;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+}
+.employee-details h4 {
+  margin: 0 0 10px 0;
+  font-size: 14px;
+  color: var(--primary);
+}
+.employee-details p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+strong {
+  font-weight: 550;
+}
+
+span {
+  margin: 0 3px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s ease;
+}
+.employee-details .delClr:hover {
+  color: var(--error);
+}
+
+.employee-details .editClr:hover {
+  color: var(--primary);
+}
+
+/* new employee form */
+label, input {
+  display: block;
+}
+input {
+  padding: 10px;
+  margin-top: 2px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.btns{
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+form button {
+  background: var(--primary);
+  border: 0;
+  margin: 10px 0;
+  color: #fff;
+  padding: 5px;
+  font-family: "Poppins";
+  border-radius: 4px;
+  cursor: pointer;
+  flex: 1;
+}
+form button:first-child {
+  margin-right: auto;
+}
+.error {
+  color: var(--error);
+  display: flex;
+  text-align: center;
+  font-weight: 500;
+}
