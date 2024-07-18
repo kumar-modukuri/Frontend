@@ -38,7 +38,7 @@ const EmployeeForm = ({employeeToUpdate,addEmp,updEmployee}) => {
         {
             if(employee.eid > 0)
             {
-                const response = await axios.post("http://localhost:8080/api/employees", {
+                const response = await axios.post("https://rajkumar-backend-api.onrender.com/api/employees", {
                     eid: eid,
                     ename: ename,
                     role: role
@@ -82,7 +82,7 @@ const EmployeeForm = ({employeeToUpdate,addEmp,updEmployee}) => {
             {
                 try 
                 {
-                    const response = await axios.put(`http://localhost:8080/api/employees/${employee.eid}`, {
+                    const response = await axios.put(`https://rajkumar-backend-api.onrender.com/api/employees/${employee.eid}`, {
                         eid: eid,
                         ename: ename,
                         role: role
