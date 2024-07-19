@@ -91,6 +91,10 @@ const EmployeeForm = ({employeeToUpdate,addEmp,updEmployee}) => {
                     if(response.data === "UPDATED") 
                     {
                         updEmployee(employee);
+                        setEid("");
+                        setEname("");
+                        setRole("");
+                        setError("");
                     }
                     else if(response.data === "NOT FOUND")
                     {
@@ -118,30 +122,30 @@ const EmployeeForm = ({employeeToUpdate,addEmp,updEmployee}) => {
             <h3>Employee Form</h3>
 
             <label>Enter ID : </label>
-                <input 
-                    type="number" 
-                    onChange={(e) => setEid(e.target.value)}
-                    placeholder="Type Here..."
-                    value={eid}
-                />
+            <input 
+                type="number" 
+                onChange={(e) => setEid(e.target.value)}
+                placeholder="Type Here..."
+                value={eid}
+            />
             
 
             <label>Name : </label>
-                <input 
-                    type="text" 
-                    onChange={(e) => setEname(e.target.value)}
-                    placeholder="Type Here..."
-                    value={ename}
-                />
+            <input 
+                type="text" 
+                onChange={(e) => setEname(e.target.value)}
+                placeholder="Type Here..."
+                value={ename}
+            />
             
 
             <label>Role : </label>
-                <input 
-                    type="text" 
-                    onChange={(e) => setRole(e.target.value)}
-                    placeholder="Type Here..."
-                    value={role}
-                />
+            <input 
+                type="text" 
+                onChange={(e) => setRole(e.target.value)}
+                placeholder="Type Here..."
+                value={role}
+            />
             
 
             <div className="btns">

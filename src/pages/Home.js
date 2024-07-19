@@ -6,6 +6,7 @@ const Home = () => {
     const [employees,setEmployees] = useState([]);
     const [loading, setLoading] = useState(true);
     const [updEmp, setUpdEmp] = useState(null);
+    const [temp,setTemp] = useState(null);
 
     // GET ALL
 
@@ -27,10 +28,11 @@ const Home = () => {
             finally
             {
                 setLoading(false);
+                setUpdEmp(null);
             }
         };
         fetchEmployees();
-    }, [updEmp]);
+    }, [temp]);
 
     // ADD
 
@@ -83,7 +85,7 @@ const Home = () => {
     };
 
     const updateEmployee = async (updatedEmployee) => {
-        setUpdEmp(updatedEmployee);
+        setTemp(updatedEmployee);
     }
 
     return (
