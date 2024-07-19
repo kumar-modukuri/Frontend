@@ -36,7 +36,7 @@ const EmployeeForm = ({employeeToUpdate,addEmp,updEmployee}) => {
         }
         else
         {
-            if(employee.eid > 0)
+            if(employee.eid > 0 && employee.eid < 1000)
             {
                 const response = await axios.post("https://rajkumar-backend-api.onrender.com/api/employees", {
                     eid: eid,
@@ -63,7 +63,7 @@ const EmployeeForm = ({employeeToUpdate,addEmp,updEmployee}) => {
             }
             else
             {
-                setError("Invalid ID");
+                setError("0 < ID < 1000");
             }
         }
     };
@@ -78,7 +78,7 @@ const EmployeeForm = ({employeeToUpdate,addEmp,updEmployee}) => {
         }
         else
         {
-            if(employee.eid > 0)
+            if(employee.eid > 0 && employee.eid < 1000)
             {
                 try 
                 {
@@ -112,51 +112,49 @@ const EmployeeForm = ({employeeToUpdate,addEmp,updEmployee}) => {
             }
             else
             {
-                setError("Invalid ID");
+                setError("0 < ID < 1000");
             }
         }
     }
 
-    return ( 
-        <form className="create">
-            <h3>Employee Form</h3>
-
-            <label>Enter ID : </label>
-            <input 
-                type="number" 
-                onChange={(e) => setEid(e.target.value)}
-                placeholder="eg : 7"
-                value={eid}
-            />
-            
-
-            <label>Name : </label>
-            <input 
-                type="text" 
-                onChange={(e) => setEname(e.target.value)}
-                placeholder="eg : John Doe"
-                value={ename}
-            />
-            
-
-            <label>Role : </label>
-            <input 
-                type="text" 
-                onChange={(e) => setRole(e.target.value)}
-                placeholder="eg : Developer"
-                value={role}
-            />
-            
-
-            <div className="btns">
-                <button onClick={handleAdd}>Add</button>
-                <button onClick={handleUpdate}>Update</button>
-            </div>
-            <div className="error">
-                <p>{error}</p>
-            </div>
-        </form>
-     );
+    return (
+        <div className='errSeparate'>
+            <form className="create">
+                <div>
+                    <h3 className='title'>Employee Form</h3>
+                </div>
+                <div className='divder'></div>
+                <div>
+                    <input
+                        type="number" 
+                        name="text" 
+                        placeholder="Enter ID"
+                        onChange={(e) => setEid(e.target.value.replace(/^0+(?=\d)/, ''))}
+                        value={eid}
+                    />
+                    <input
+                        type="text" 
+                        name="text"
+                        placeholder="Employee Name"
+                        onChange={(e) => setEname(e.target.value)}
+                        value={ename}  
+                    />
+                    <input
+                        type="text" 
+                        name="text"
+                        placeholder="Enter Role"
+                        onChange={(e) => setRole(e.target.value)}
+                        value={role}
+                    />
+                </div>
+                <div className="btns">
+                    <button onClick={handleAdd}>Add</button>
+                    <button onClick={handleUpdate}>Update</button>
+                </div>
+            </form>
+            <div className="error">{error}</div>
+        </div>
+    );
 }
 
 export default EmployeeForm;

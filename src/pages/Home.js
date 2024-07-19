@@ -37,7 +37,9 @@ const Home = () => {
     // ADD
 
     const addEmployee = (newEmp) => {
-        setEmployees([...employees, newEmp]);
+        const updatedEmployees = [...employees, newEmp];
+        const sortedEmployees = updatedEmployees.sort((a, b) => a.eid - b.eid);
+        setEmployees(sortedEmployees);
     }
 
     // DELETE
@@ -90,30 +92,36 @@ const Home = () => {
 
     return (
         <div className="home">
-            <div className="employees">
-                {loading ? (<p>Loading...</p>) : (
-                    employees && employees.map((employee) => (
-                        <div className="employee-details" key={employee.eid}>
-                            <div className='empContent'>
-                                <h4>Employee-ID : {employee.eid}</h4>
-                                <p><strong>Name : </strong>{employee.ename}</p>
-                                <p><strong>Role : </strong>{employee.role}</p>
-                            </div>
-                            <div className='upd'>
-                                <span className="editClr" onClick={() => handleEdit(employee)}>Edit</span>
-                                <span> | </span>
-                                <span className="delClr" onClick={() => handleDelete(employee)}>Delete</span>   
-                            </div>
-                        </div>
-                    ))
-                )}
-            </div>
-            <div className='details'>
+            <div className='empForm'>
                 <EmployeeForm
-                    employeeToUpdate={updEmp} // Sending updEmp to Employee Form for filling data into the Form
-                    addEmp={addEmployee} // Receiving new Employee and assigning it to the setEmployees with the help of addEmployee Function
-                    updEmployee={updateEmployee} // Receiving updated Employee and assigning it to the setUpdEmp  with the help of updateEmployee Function
+                    employeeToUpdate={updEmp}
+                    addEmp={addEmployee}
+                    updEmployee={updateEmployee}
                 />
+            </div>
+            <div className='empDiv'>
+                <div className="employees">
+                    {loading ? (<p>Loading...</p>) : (
+                        employees && employees.map((employee) => (
+                            <div className="employee-details" key={employee.eid}>
+                                <div className='empContent'>
+                                    <div id='empID'>
+                                        <h4 className='huge'>{employee.eid}</h4>
+                                    </div>
+                                    <div id='empData'>
+                                        <p><strong>Name : </strong>{employee.ename}</p>
+                                        <p><strong>Role : </strong>{employee.role}</p>
+                                    </div>
+                                </div>
+                                <div className='upd'>
+                                    <span className="editClr" onClick={() => handleEdit(employee)}>Edit</span>
+                                    <span> | </span>
+                                    <span className="delClr" onClick={() => handleDelete(employee)}>Delete</span>   
+                                </div>
+                            </div>
+                        ))
+                    )}
+                </div>
             </div>
         </div>
     );

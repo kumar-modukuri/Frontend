@@ -6,7 +6,7 @@ const Navbar = () => {
             <div className="container">
                 <Link to="/">
                     <img src='https://github.com/kumar-modukuri/assets/raw/main/rk_logo.jpg' alt='Logo'/> 
-                    <h2>Employee Management System</h2>
+                    <h2 className='titleMain'>Employee Management System</h2>
                 </Link>
             </div>
         </header>
