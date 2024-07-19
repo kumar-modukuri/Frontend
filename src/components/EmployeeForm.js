@@ -125,7 +125,7 @@ const EmployeeForm = ({employeeToUpdate,addEmp,updEmployee}) => {
             <input 
                 type="number" 
                 onChange={(e) => setEid(e.target.value)}
-                placeholder="Type Here..."
+                placeholder="eg : 7"
                 value={eid}
             />
             
@@ -134,7 +134,7 @@ const EmployeeForm = ({employeeToUpdate,addEmp,updEmployee}) => {
             <input 
                 type="text" 
                 onChange={(e) => setEname(e.target.value)}
-                placeholder="Type Here..."
+                placeholder="eg : John Doe"
                 value={ename}
             />
             
@@ -143,7 +143,7 @@ const EmployeeForm = ({employeeToUpdate,addEmp,updEmployee}) => {
             <input 
                 type="text" 
                 onChange={(e) => setRole(e.target.value)}
-                placeholder="Type Here..."
+                placeholder="eg : Developer"
                 value={role}
             />
             

@@ -5,7 +5,7 @@ const Navbar = () => {
         <header>
             <div className="container">
                 <Link to="/">
-                    <img src='https://static.vecteezy.com/system/resources/thumbnails/020/397/532/small/ems-letter-logo-design-on-white-background-ems-creative-circle-letter-logo-concept-ems-letter-design-vector.jpg' alt='Logo'/> 
+                    <img src='https://github.com/kumar-modukuri/assets/raw/main/rk_logo.jpg' alt='Logo'/> 
                     <h2>Employee Management System</h2>
                 </Link>
             </div>
