@@ -7,6 +7,10 @@ const EmployeeForm = ({employeeToUpdate,addEmp,updEmployee}) => {
     const [role,setRole] = useState("");
     const [error,setError] = useState("");
 
+    // Backend API Endpoint
+
+    const URL = "https://rajkumar-backend-api.onrender.com";
+
     // Enters the data of the employeeToUpdate into the Form after clicking Edit Button
 
     useEffect(() => {
@@ -38,7 +42,7 @@ const EmployeeForm = ({employeeToUpdate,addEmp,updEmployee}) => {
         {
             if(employee.eid > 0 && employee.eid < 1000)
             {
-                const response = await axios.post("https://rajkumar-backend-api.onrender.com/api/employees", {
+                const response = await axios.post(URL+"/api/employees", {
                     eid: eid,
                     ename: ename,
                     role: role
@@ -82,7 +86,7 @@ const EmployeeForm = ({employeeToUpdate,addEmp,updEmployee}) => {
             {
                 try 
                 {
-                    const response = await axios.put(`https://rajkumar-backend-api.onrender.com/api/employees/${employee.eid}`, {
+                    const response = await axios.put(`${URL}/api/employees/${employee.eid}`, {
                         eid: eid,
                         ename: ename,
                         role: role

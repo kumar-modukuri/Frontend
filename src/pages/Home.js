@@ -8,13 +8,17 @@ const Home = () => {
     const [updEmp, setUpdEmp] = useState(null);
     const [temp,setTemp] = useState(null);
 
+    // Backend API Endpoint
+
+    const URL = "https://rajkumar-backend-api.onrender.com";
+
     // GET ALL
 
     useEffect(() => {
         const fetchEmployees = async () => {
             try 
             {
-                const response = await axios.get('https://rajkumar-backend-api.onrender.com/api/employees');
+                const response = await axios.get(URL+"/api/employees");
                 if(response.data.length === 0)
                 {
                     console.log("Database is Empty or Error");
@@ -48,7 +52,7 @@ const Home = () => {
     {
         try
         {
-            const response = await axios.delete(`https://rajkumar-backend-api.onrender.com/api/employees/${employee.eid}`);
+            const response = await axios.delete(`${URL}/api/employees/${employee.eid}`);
             if(response.data === "DELETED")
             {
                 setEmployees(employees.filter(emp => emp.eid !== employee.eid));
@@ -70,7 +74,7 @@ const Home = () => {
     {
         try 
         {
-            const response = await axios.get(`https://rajkumar-backend-api.onrender.com/api/employees/${employee.eid}`);
+            const response = await axios.get(`${URL}/api/employees/${employee.eid}`);
             if(response.data.length === 0)
             {
                 console.log("Backend Error");
