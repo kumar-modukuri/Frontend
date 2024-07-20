@@ -283,7 +283,7 @@ button:hover
 }
 
 /* Responsive Styles */
-@media screen and (max-width: 480px) 
+@media screen and (max-width: 720px) 
 {
   header .container 
   {
@@ -315,7 +315,7 @@ button:hover
   .create 
   {
     border: none;
-    padding: 0 50px;
+    padding: 20px 50px;
   }
 
   .empContent 
@@ -338,7 +338,7 @@ button:hover
 
   .title 
   {
-    font-size: 30px;
+    display: none;
   }
 
   .employee-details 
@@ -379,6 +379,11 @@ button:hover
   {
     height: 100%;
     width: 94%;
+  }
+
+  .divder
+  {
+    display: none;
   }
 }
 
