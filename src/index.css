@@ -109,6 +109,15 @@ img
   margin: 10px;
 }
 
+/* About Page Layout */
+
+.about-content 
+{
+  margin: 0 5%;
+  height: 83vh;
+  align-items: center;
+}
+
 /* Employee Details */
 .employee-details 
 {
