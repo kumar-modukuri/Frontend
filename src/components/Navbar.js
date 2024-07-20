@@ -5,8 +5,8 @@ const Navbar = () => {
         <header>
             <div className="container">
                 <Link to="/">
-                    <img src='https://github.com/kumar-modukuri/assets/raw/main/rk_logo.jpg' alt='Logo'/> 
-                    <h2 className='titleMain'>Employee Management System</h2>
+                    <img src='https://github.com/kumar-modukuri/assets/raw/main/rk_logo.jpg' alt='Logo' className='logo'/>
+                    <h2 className='titleMain'>PROJECT 01</h2>
                 </Link>
                 <Link to="/about">
                     <p className='about'>About</p>

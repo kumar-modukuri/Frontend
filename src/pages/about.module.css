@@ -1,0 +1,272 @@
+.aboutContent 
+{
+    margin: 0 5%;
+    padding: 0;
+}
+
+.aboutContent h4, p 
+{
+    margin: 0;
+    padding: 0;
+}
+
+.proDetails p 
+{
+    text-align: center;
+}
+
+.myDetails 
+{
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+    padding-top: 40px;
+}
+
+.myData 
+{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin: 0;
+    padding: 0 0 10px 0
+}
+
+.nameLinks 
+{
+    display: flex;    
+    height: 50px;
+    justify-content: space-between;
+}
+
+.nameLinks h4 
+{
+    font-size: 24px;
+}
+
+.data 
+{
+    width:80%;
+}
+
+.social 
+{
+    width: 20%;
+    text-align: end;
+}
+
+.social img 
+{
+    margin-left: 16px;
+}
+
+.aboutMe 
+{
+    font-style: italic;
+}
+
+.profilePic
+{
+    height: 300px;
+    width: 250px;
+    border-radius: 8px;
+}
+
+.socialIcon
+{
+    max-height: 42px;
+    max-width: auto;
+    border-radius: 50%;
+    border: 3px solid green;
+}
+
+/* Heading Css  */
+
+.abtHeading  
+{
+    display: flex;
+    flex-direction: column;
+    margin: 60px 0 20px 0;
+    align-items: center;
+}
+
+.abtHeading h3 
+{
+    color:rgb(8, 11, 81);
+}
+
+.abtDivider 
+{
+    border: 1px solid rgb(177, 177, 177);
+    width: 100%;
+}
+
+/* Tech Used Div */
+
+.techIcons 
+{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.icons
+{
+    height: 100px;
+    width: 160px;
+    border-radius: 8px;
+    border: 3px solid rgb(184, 184, 184);
+}
+
+/* contact start */
+
+.contact 
+{
+    height: 60px;
+    width: auto;
+    background-color: blue;
+    border-radius: 10px;
+    color: white;
+    font-size: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    gap: 16px;
+}
+
+.contact span 
+{
+    color: white !important;
+}
+
+/* Responsive Styles */
+
+@media only screen and (min-width:75px) and (max-width: 960px)
+{ 
+    .aboutContent 
+    {
+        margin: 0 3%;
+    }
+
+    .aboutContent h4, p 
+    {
+        margin: 0;
+        padding: 0;
+    }
+
+    .proDetails p  
+    {
+        text-align: center;
+    }
+
+    .myDetails 
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: start;
+        padding-top: 40px;
+    }
+
+    .myData 
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin: 0;
+        padding: 0 0 10px 0
+    }
+
+    .nameLinks 
+    {
+        display: flex;
+        height: 50px;
+        justify-content: space-between;
+    }
+
+    .nameLinks h4 
+    {
+        font-size: 24px;
+    }
+
+    .data 
+    {
+        width:70%;
+    }
+
+    .social 
+    {
+        width: 30%;
+        height: 70%;
+        text-align: end;
+    }
+
+    .social img 
+    {
+        margin-left: 8px;
+    }
+
+    .aboutMe 
+    {
+        font-style: italic;
+    }
+
+    .profilePhoto 
+    {
+        height: 100px;
+        text-align: center;
+    }
+
+    .profilePic
+    {
+        height: 100px;
+        width: auto;
+        border-radius: 8px;
+    }
+
+    .socialIcon
+    {
+        max-height: 42px;
+        max-width: auto;
+        border-radius: 50%;
+        border: 3px solid green;
+    }
+
+    /* Tech Used Div */
+
+    .icons
+    {
+        height: 70px;
+        width: 60px;
+        border-radius: 8px;
+        border: 3px solid rgb(184, 184, 184);
+    }
+
+    /* Heading Css  */
+
+    .abtHeading  
+    {
+        margin: 28px 0 16px 0;
+    }
+
+    .contact 
+    {
+        height: 90px;
+        width: auto;
+        background-color: blue;
+        border-radius: 6px;
+        color: white;
+        font-size: 500;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 40px;
+        gap: 2px;
+    }
+
+    .contact span 
+    {
+        display: none;  
+    }
+}
