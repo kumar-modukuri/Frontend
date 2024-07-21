@@ -28,6 +28,18 @@ body
   display: none;
 }
 
+/* Input Spin Bar */
+
+input::-webkit-inner-spin-button  /* Chromium and Safari */
+{
+  display: none;
+}
+
+input /* Firefox */
+{
+  appearance: none; /* Standard for most modern browsers */
+  -webkit-appearance: none;
+}
 
 /* Header Styles */
 
@@ -281,6 +293,7 @@ button:hover
 .title 
 {
   font-size: 30px;
+  color: var(--primary);
 }
 
 .create 

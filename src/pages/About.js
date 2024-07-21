@@ -14,13 +14,13 @@ const About = () => {
                             <p>Fullstack Developer</p>
                         </div>
                         <div className={aboutcss.social}>
-                            <img src="https://github.com/kumar-modukuri/assets/raw/main/Linkedin.png" alt="Linkedin" className={aboutcss.socialIcon}/>
-                            <img src="https://github.com/kumar-modukuri/assets/raw/main/Gmail.png" alt="Gmail" className={aboutcss.socialIcon}/>
+                            <a href="https://www.linkedin.com/in/kumar-modukuri-284288231" target='blank'><img src="https://github.com/kumar-modukuri/assets/raw/main/Linkedin.png" alt="Linkedin" className={aboutcss.socialIcon} id={aboutcss.linkedin}/></a>
+                            <a href="https://github.com/kumar-modukuri" target='blank'><img src="https://github.com/kumar-modukuri/assets/raw/main/Github.png" alt="Github" className={aboutcss.socialIcon} id={aboutcss.github}/></a>
                         </div>
                     </div>
                     <div>
                         <p className={aboutcss.aboutMe}>
-                            Hello! My name is Kumar Modukuri,a passionate Full Stack developer with expertise in building dynamic and responsive web applications. With a solid background in both frontend and backend development, I strive to create seamless and efficient user experiences.
+                            Hello! My name is Kumar Modukuri , a passionate Full Stack developer with expertise in building dynamic and responsive web applications. With a solid background in both frontend and backend development, I strive to create seamless and efficient user experiences.
                         </p>
                     </div>
                 </div>
@@ -28,16 +28,16 @@ const About = () => {
             <div className={aboutcss.proDetails}>
                 <div className={aboutcss.description}>
                     <div className={aboutcss.abtHeading}>
-                        <h3>Project Description</h3>
+                        <h3>PROJECT DESCRIPTION</h3>
                         <div className={aboutcss.abtDivider}></div>
                     </div>
                     <p>
-                        This is a comprehensive web application designed to manage employee data efficiently. This project aims to streamline HR processes by providing a user-friendly interface for managing employee records, tracking performance, and handling administrative tasks.
+                        This is a comprehensive web application designed to manage employee data efficiently. This project aims to streamline HR processes by providing a user-friendly interface for managing employee records and handling administrative tasks.
                     </p>
                 </div>
                 <div className={aboutcss.tech}>
                     <div className={aboutcss.abtHeading}>
-                        <h3>Technologies Used</h3>
+                        <h3>TECHNOLOGIES USED</h3>
                         <div className={aboutcss.abtDivider}></div>
                     </div>
                     <div className={aboutcss.techIcons}>
@@ -49,21 +49,21 @@ const About = () => {
                 </div>
                 <div className={aboutcss.keyFea}>
                     <div className={aboutcss.abtHeading}>
-                        <h3>Key Features</h3>
+                        <h3>KEY FEATURES</h3>
                         <div className={aboutcss.abtDivider}></div>
                     </div>
                     <p>
-                        CRUD Operations: Create, Read, Update, and Delete employee records with ease.
-                        Responsive Design: Accessible from both desktop and mobile devices.
+                        <p>CRUD Operations : Create, Read, Update, and Delete employee records with ease.</p>
+                        <p>Responsive Design : Accessible from both desktop and mobile devices.</p>
                     </p> 
                 </div>
                 <div className={aboutcss.conc}>
                     <div className={aboutcss.abtHeading}>
-                        <h3>Why & Conclucion</h3>
+                        <h3>USAGE AND CONCLUSION</h3>
                         <div className={aboutcss.abtDivider}></div>
                     </div>
                     <p>
-                         Why This Project? The Employee Management System was developed to address the need for an efficient and scalable solution for managing employee data. By leveraging modern technologies and best practices, this project ensures a robust and user-friendly platform for HR departments to streamline their operations.
+                         Why This Project? This Project was developed to address the need for an efficient and scalable solution for managing employee data. By leveraging modern technologies and best practices, this project ensures a robust and user-friendly platform for HR departments to streamline their operations.
                          This project showcases my ability to develop full-stack applications using a variety of tools and technologies. If you have any questions or would like to see a demo, feel free to reach out!
                     </p>
                </div>

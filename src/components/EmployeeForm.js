@@ -1,5 +1,5 @@
-import React,{ useState,useEffect } from "react";
 import axios from 'axios';
+import React, { useEffect, useState } from "react";
 
 const EmployeeForm = ({employeeToUpdate,addEmp,updEmployee}) => {
     const [eid,setEid] = useState("");
@@ -28,6 +28,10 @@ const EmployeeForm = ({employeeToUpdate,addEmp,updEmployee}) => {
         }
     },[employeeToUpdate]); // It will work for every employee
 
+    // To Clear the Error Message after 1 Second
+
+    const errorClear = () => setTimeout(() => setError(""), 1000);
+
     // Adding New Employee and sending new employee to the Home with the help of addEmp
 
     const handleAdd = async (e) => {
@@ -37,6 +41,7 @@ const EmployeeForm = ({employeeToUpdate,addEmp,updEmployee}) => {
         if(employee.eid === "" || employee.ename === "" || employee.role === "")
         {
             setError("Enter All Fields");
+            errorClear();
         }
         else
         {
@@ -54,11 +59,13 @@ const EmployeeForm = ({employeeToUpdate,addEmp,updEmployee}) => {
                     setEid("");
                     setEname("");
                     setRole("");
-                    setError("");
+                    setError(employee.ename+" Added");
+                    errorClear();
                 }
                 else if(response.data === "EXISTED")
                 {
                     setError("ID Already Exists");
+                    errorClear();
                 }
                 else
                 {
@@ -68,6 +75,7 @@ const EmployeeForm = ({employeeToUpdate,addEmp,updEmployee}) => {
             else
             {
                 setError("0 < ID < 1000");
+                errorClear();
             }
         }
     };
@@ -79,6 +87,7 @@ const EmployeeForm = ({employeeToUpdate,addEmp,updEmployee}) => {
         if(employee.eid === "" || employee.ename === "" || employee.role === "")
         {
             setError("Enter All Fields");
+            errorClear();
         }
         else
         {
@@ -98,11 +107,13 @@ const EmployeeForm = ({employeeToUpdate,addEmp,updEmployee}) => {
                         setEid("");
                         setEname("");
                         setRole("");
-                        setError("");
+                        setError(employee.eid+" Updated");
+                        errorClear();
                     }
                     else if(response.data === "NOT FOUND")
                     {
                         setError("ID Not Found");
+                        errorClear();
                     }
                     else
                     {
@@ -117,6 +128,7 @@ const EmployeeForm = ({employeeToUpdate,addEmp,updEmployee}) => {
             else
             {
                 setError("0 < ID < 1000");
+                errorClear();
             }
         }
     }
@@ -130,7 +142,7 @@ const EmployeeForm = ({employeeToUpdate,addEmp,updEmployee}) => {
                 <div className='divder'></div>
                 <div>
                     <input
-                        type="number" 
+                        type="number"
                         name="text" 
                         placeholder="Enter ID"
                         onChange={(e) => setEid(e.target.value.replace(/^0+(?=\d)/, ''))}
