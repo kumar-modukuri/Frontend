@@ -14,8 +14,8 @@ const About = () => {
                             <p>Fullstack Developer</p>
                         </div>
                         <div className={aboutcss.social}>
-                            <img src="https://github.com/kumar-modukuri/assets/raw/main/rk_logo.jpg" alt="Facebook" className={aboutcss.socialIcon}/>
-                            <img src="https://github.com/kumar-modukuri/assets/raw/main/rk_logo.jpg" alt="Google" className={aboutcss.socialIcon}/>
+                            <img src="https://github.com/kumar-modukuri/assets/raw/main/Linkedin.png" alt="Linkedin" className={aboutcss.socialIcon}/>
+                            <img src="https://github.com/kumar-modukuri/assets/raw/main/Gmail.jpg" alt="Gmail" className={aboutcss.socialIcon}/>
                         </div>
                     </div>
                     <div>
