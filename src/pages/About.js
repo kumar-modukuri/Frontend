@@ -41,10 +41,10 @@ const About = () => {
                         <div className={aboutcss.abtDivider}></div>
                     </div>
                     <div className={aboutcss.techIcons}>
-                        <img src="https://github.com/kumar-modukuri/assets/raw/main/rk_logo.jpg" alt="Java Spring Boot" className={aboutcss.icons}/>
-                        <img src="https://github.com/kumar-modukuri/assets/raw/main/rk_logo.jpg" alt="React.js" className={aboutcss.icons}/>
-                        <img src="https://github.com/kumar-modukuri/assets/raw/main/rk_logo.jpg" alt="MongoDB Atlas" className={aboutcss.icons}/>
-                        <img src="https://github.com/kumar-modukuri/assets/raw/main/rk_logo.jpg" alt="Render.com" className={aboutcss.icons}/>
+                        <img src="https://github.com/kumar-modukuri/assets/raw/main/Springboot.png" alt="Java Spring Boot" className={aboutcss.icons}/>
+                        <img src="https://github.com/kumar-modukuri/assets/raw/main/Reactjs.png" alt="React.js" className={aboutcss.icons}/>
+                        <img src="https://github.com/kumar-modukuri/assets/raw/main/Mongodb.png" alt="MongoDB Atlas" className={aboutcss.icons}/>
+                        <img src="https://github.com/kumar-modukuri/assets/raw/main/Docker.png" alt="Render.com" className={aboutcss.icons}/>
                     </div>
                 </div>
                 <div className={aboutcss.keyFea}>
