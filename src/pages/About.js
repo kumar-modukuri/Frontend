@@ -15,7 +15,7 @@ const About = () => {
                         </div>
                         <div className={aboutcss.social}>
                             <img src="https://github.com/kumar-modukuri/assets/raw/main/Linkedin.png" alt="Linkedin" className={aboutcss.socialIcon}/>
-                            <img src="https://github.com/kumar-modukuri/assets/raw/main/Gmail.jpg" alt="Gmail" className={aboutcss.socialIcon}/>
+                            <img src="https://github.com/kumar-modukuri/assets/raw/main/Gmail.png" alt="Gmail" className={aboutcss.socialIcon}/>
                         </div>
                     </div>
                     <div>
