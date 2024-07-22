@@ -5,7 +5,7 @@ const About = () => {
         <div className={aboutcss.aboutContent}>
             <div className={aboutcss.myDetails}>
                 <div className={aboutcss.profilePhoto}>
-                    <img src="https://github.com/kumar-modukuri/assets/raw/main/Profile%20Pic.jpg" alt="" className={aboutcss.profilePic}/>
+                    <img src={require('../assets/Profilepic.jpg')} alt="" className={aboutcss.profilePic}/>
                 </div>
                 <div className={aboutcss.myData}>
                     <div className={aboutcss.nameLinks}>
@@ -14,8 +14,8 @@ const About = () => {
                             <p>Fullstack Developer</p>
                         </div>
                         <div className={aboutcss.social}>
-                            <a href="https://www.linkedin.com/in/kumar-modukuri-284288231" target='blank'><img src="https://github.com/kumar-modukuri/assets/raw/main/Linkedin.png" alt="Linkedin" className={aboutcss.socialIcon} id={aboutcss.linkedin}/></a>
-                            <a href="https://github.com/kumar-modukuri" target='blank'><img src="https://github.com/kumar-modukuri/assets/raw/main/Github.png" alt="Github" className={aboutcss.socialIcon} id={aboutcss.github}/></a>
+                            <a href="https://www.linkedin.com/in/kumar-modukuri-284288231" target='blank'><img src={require('../assets/Linkedin.png')} alt="Linkedin" className={aboutcss.socialIcon} id={aboutcss.linkedin}/></a>
+                            <a href="https://github.com/kumar-modukuri" target='blank'><img src={require('../assets/Github.png')} alt="Github" className={aboutcss.socialIcon} id={aboutcss.github}/></a>
                         </div>
                     </div>
                     <div>
@@ -41,10 +41,10 @@ const About = () => {
                         <div className={aboutcss.abtDivider}></div>
                     </div>
                     <div className={aboutcss.techIcons}>
-                        <img src="https://github.com/kumar-modukuri/assets/raw/main/Springboot.png" alt="Java Spring Boot" className={aboutcss.icons}/>
-                        <img src="https://github.com/kumar-modukuri/assets/raw/main/Reactjs.png" alt="React.js" className={aboutcss.icons}/>
-                        <img src="https://github.com/kumar-modukuri/assets/raw/main/Mongodb.png" alt="MongoDB Atlas" className={aboutcss.icons}/>
-                        <img src="https://github.com/kumar-modukuri/assets/raw/main/Docker.png" alt="Render.com" className={aboutcss.icons}/>
+                        <img src={require('../assets/Springboot.png')} alt="Java Spring Boot" className={aboutcss.icons}/>
+                        <img src={require('../assets/Reactjs.png')} alt="React.js" className={aboutcss.icons}/>
+                        <img src={require('../assets/Mongodb.png')} alt="MongoDB Atlas" className={aboutcss.icons}/>
+                        <img src={require('../assets/Docker.png')} alt="Docker" className={aboutcss.icons}/>
                     </div>
                 </div>
                 <div className={aboutcss.keyFea}>
@@ -52,10 +52,10 @@ const About = () => {
                         <h3>KEY FEATURES</h3>
                         <div className={aboutcss.abtDivider}></div>
                     </div>
-                    <p>
+                    <div>
                         <p>CRUD Operations : Create, Read, Update, and Delete employee records with ease.</p>
                         <p>Responsive Design : Accessible from both desktop and mobile devices.</p>
-                    </p> 
+                    </div> 
                 </div>
                 <div className={aboutcss.conc}>
                     <div className={aboutcss.abtHeading}>
