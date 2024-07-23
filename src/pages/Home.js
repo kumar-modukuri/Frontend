@@ -105,7 +105,7 @@ const Home = () => {
             </div>
             <div className='empDiv'>
                 <div className="employees">
-                    {loading ? (<p>Loading...</p>) : (
+                    {loading ? (<p>Loading...</p>) : employees.length === 0 ? (<p>Database is Empty</p>) : (
                         employees && employees.map((employee) => (
                             <div className="employee-details" key={employee.eid}>
                                 <div className='empContent'>
