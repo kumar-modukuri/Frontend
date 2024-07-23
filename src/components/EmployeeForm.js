@@ -35,8 +35,8 @@ const EmployeeForm = ({employeeToUpdate,addEmp,updEmployee}) => {
     // Check if the ID is Integer or not
 
     const handleChange = (e) => {
-        const value = e.target.value.replace(/^0+(?=\d)/, '');
-        setEid(parseInt(value,10));
+        const value = parseInt(e.target.value.replace(/^0+(?=\d)/, ''),10);
+        setEid(isNaN(value) ? '' : value);
     };
 
     // Adding New Employee and sending new employee to the Home with the help of addEmp
