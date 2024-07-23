@@ -28,9 +28,16 @@ const EmployeeForm = ({employeeToUpdate,addEmp,updEmployee}) => {
         }
     },[employeeToUpdate]); // It will work for every employee
 
-    // To Clear the Error Message after 1 Second
+    // To Clear the Error Message after 2 Seconds
 
-    const errorClear = () => setTimeout(() => setError(""), 1000);
+    const errorClear = () => setTimeout(() => setError(""), 2000);
+
+    // Check if the ID is Integer or not
+
+    const handleChange = (e) => {
+        const value = e.target.value.replace(/^0+(?=\d)/, '');
+        setEid(parseInt(value,10));
+    };
 
     // Adding New Employee and sending new employee to the Home with the help of addEmp
 
@@ -47,29 +54,36 @@ const EmployeeForm = ({employeeToUpdate,addEmp,updEmployee}) => {
         {
             if(employee.eid > 0 && employee.eid < 1000)
             {
-                const response = await axios.post(URL+"/api/employees", {
-                    eid: eid,
-                    ename: ename,
-                    role: role
-                });
-
-                if(response.data === "ADDED")
+                try
                 {
-                    addEmp(employee); // For automatically adds data without refreshing
-                    setEid("");
-                    setEname("");
-                    setRole("");
-                    setError(employee.ename+" Added");
-                    errorClear();
+                    const response = await axios.post(URL+"/api/employees", {
+                        eid: eid,
+                        ename: ename,
+                        role: role
+                    });
+    
+                    if(response.data === "ADDED")
+                    {
+                        addEmp(employee); // For automatically adds data without refreshing
+                        setEid("");
+                        setEname("");
+                        setRole("");
+                        setError(employee.ename+" Added");
+                        errorClear();
+                    }
+                    else if(response.data === "EXISTED")
+                    {
+                        setError("ID Already Exists");
+                        errorClear();
+                    }
+                    else
+                    {
+                        console.log("Backend Error");
+                    }
                 }
-                else if(response.data === "EXISTED")
+                catch(error)
                 {
-                    setError("ID Already Exists");
-                    errorClear();
-                }
-                else
-                {
-                    console.log("Backend Error");
+                    console.log("Frontend : ",error.message);
                 }
             }
             else
@@ -93,7 +107,7 @@ const EmployeeForm = ({employeeToUpdate,addEmp,updEmployee}) => {
         {
             if(employee.eid > 0 && employee.eid < 1000)
             {
-                try 
+                try
                 {
                     const response = await axios.put(`${URL}/api/employees/${employee.eid}`, {
                         eid: eid,
@@ -120,7 +134,7 @@ const EmployeeForm = ({employeeToUpdate,addEmp,updEmployee}) => {
                         console.log("Backend Error");
                     }
                 }
-                catch(error) 
+                catch(error)
                 {
                     console.log("Frontend : ",error.message);
                 }
@@ -145,13 +159,13 @@ const EmployeeForm = ({employeeToUpdate,addEmp,updEmployee}) => {
                         type="number"
                         name="text" 
                         placeholder="Enter ID"
-                        onChange={(e) => setEid(e.target.value.replace(/^0+(?=\d)/, ''))}
+                        onChange={handleChange}
                         value={eid}
                     />
                     <input
                         type="text" 
                         name="text"
-                        placeholder="Employee Name"
+                        placeholder="Enter Name"
                         onChange={(e) => setEname(e.target.value)}
                         value={ename}  
                     />
