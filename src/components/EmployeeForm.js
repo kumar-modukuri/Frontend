@@ -39,9 +39,9 @@ const EmployeeForm = ({employeeToUpdate,addEmp,updEmployee}) => {
         setEid(isNaN(value) ? '' : value);
     };
 
-    // Adding New Employee and sending new employee to the Home with the help of addEmp
+    // Adding New Employee and Updating Existing Employee
 
-    const handleAdd = async (e) => {
+    const handleClick = async (e,str) => {
         e.preventDefault();
         const employee = {eid,ename,role};
 
@@ -54,74 +54,46 @@ const EmployeeForm = ({employeeToUpdate,addEmp,updEmployee}) => {
         {
             if(employee.eid > 0 && employee.eid < 1000)
             {
+                let response = "";
                 try
                 {
-                    const response = await axios.post(URL+"/api/employees", {
-                        eid: eid,
-                        ename: ename,
-                        role: role
-                    });
-    
+                    if(str === "ADD")
+                    {
+                        response = await axios.post(URL+"/api/employees", {
+                            eid: eid,
+                            ename: ename,
+                            role: role
+                        });
+                    }
+                    if(str === "UPDATE")
+                    {
+                        response = await axios.put(`${URL}/api/employees/${employee.eid}`, {
+                            eid: eid,
+                            ename: ename,
+                            role: role
+                        });
+                    }
                     if(response.data === "ADDED")
                     {
-                        addEmp(employee); // For automatically adds data without refreshing
+                        addEmp(employee);
                         setEid("");
                         setEname("");
                         setRole("");
                         setError(employee.ename+" Added");
                         errorClear();
                     }
-                    else if(response.data === "EXISTED")
-                    {
-                        setError("ID Already Exists");
-                        errorClear();
-                    }
-                    else
-                    {
-                        console.log("Backend Error");
-                    }
-                }
-                catch(error)
-                {
-                    console.log("Frontend : ",error.message);
-                }
-            }
-            else
-            {
-                setError("0 < ID < 1000");
-                errorClear();
-            }
-        }
-    };
-
-    const handleUpdate = async (e) => {
-        e.preventDefault();
-        const employee = {eid,ename,role};
-
-        if(employee.eid === "" || employee.ename === "" || employee.role === "")
-        {
-            setError("Enter All Fields");
-            errorClear();
-        }
-        else
-        {
-            if(employee.eid > 0 && employee.eid < 1000)
-            {
-                try
-                {
-                    const response = await axios.put(`${URL}/api/employees/${employee.eid}`, {
-                        eid: eid,
-                        ename: ename,
-                        role: role
-                    });
-    
-                    if(response.data === "UPDATED") 
+                    else if(response.data === "UPDATED") 
                     {
                         updEmployee(employee);
                         setEid("");
                         setEname("");
                         setRole("");
                         setError(employee.eid+" Updated");
+                        errorClear();
+                    }
+                    else if(response.data === "EXISTED")
+                    {
+                        setError("ID Already Exists");
                         errorClear();
                     }
                     else if(response.data === "NOT FOUND")
@@ -178,8 +150,8 @@ const EmployeeForm = ({employeeToUpdate,addEmp,updEmployee}) => {
                     />
                 </div>
                 <div className="btns">
-                    <button onClick={handleAdd}>Add</button>
-                    <button onClick={handleUpdate}>Update</button>
+                    <button onClick={(e) => handleClick(e,"ADD")}>Add</button>
+                    <button onClick={(e) => handleClick(e,"UPDATE")}>Update</button>
                 </div>
             </form>
             <div className="error">{error}</div>
