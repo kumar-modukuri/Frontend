@@ -56,17 +56,13 @@ header .container
   align-items: center;
 }
 
+/* Search Bar */
+
 .search-about-container 
 {
   display: flex;
   gap: 60px;
-}
-
-.search-wrapper 
-{
-  display: flex;
   align-items: center;
-  gap: 10px;
 }
 
 .search-bar 
@@ -76,13 +72,6 @@ header .container
   max-width: 200px;
   max-height: 32px;
   outline: none;
-}
-
-.search-btn 
-{
-  max-width: 26px;
-  max-height: 26px;
-  cursor: pointer;
 }
 
 header a 
