@@ -331,14 +331,40 @@ button:hover
 {
   img 
   {
-    height: 35px;
+    height: 30px;
   }
 
   .titleMain 
   {
-    font-size: 20px;
-    margin-left: 6px;
-    font-weight: 400;
+    font-size: 14px;
+    margin-left: 3px;
+  }
+
+  header a 
+  {
+    gap: 6px;
+  }
+
+  .about 
+  {
+    font-size: 12px;
+    padding: 4px 12px;
+  }
+
+  /* Search Bar */
+
+  .search-about-container 
+  {
+    gap: 10px;
+  }
+
+  .search-bar 
+  {
+    margin: 0px;
+    padding: 10px;
+    max-width: 100px;
+    max-height: 30px;
+    outline: none;
   }
 
   .home 
