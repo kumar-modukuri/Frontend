@@ -1,35 +1,51 @@
-import {useEffect,useState} from 'react';
-import EmployeeForm from '../components/EmployeeForm';
 import axios from 'axios';
+import { useEffect, useState } from 'react';
+import EmployeeForm from '../components/EmployeeForm';
 
-const Home = () => {
-    const [employees,setEmployees] = useState([]);
+const Home = ({ searchedEmp }) => {
+    const [employees, setEmployees] = useState([]);
+    const [filteredEmployees, setFilteredEmployees] = useState([]);
     const [loading, setLoading] = useState(true);
     const [updEmp, setUpdEmp] = useState(null);
-    const [temp,setTemp] = useState(null);
+    const [temp, setTemp] = useState(null);
 
     // Backend API Endpoint
 
     const URL = "https://rajkumar-backend-api.onrender.com";
 
-    // GET ALL
+    // Filtering By Name
+
+    useEffect(() => {
+        if(employees.length > 0)
+        {
+            if(searchedEmp)
+            {
+                const filtered = employees.filter(employee =>employee.ename.toLowerCase().includes(searchedEmp.toLowerCase()));
+                setFilteredEmployees(filtered);
+            } 
+            else
+            {
+                setFilteredEmployees(employees);
+            }
+        }
+    },[searchedEmp,employees]);
 
     useEffect(() => {
         const fetchEmployees = async () => {
             try 
             {
-                const response = await axios.get(URL+"/api/employees");
+                const response = await axios.get(`${URL}/api/employees`);
                 if(response.data.length === 0)
                 {
                     console.log("Database is Empty or Error");
                 }
                 setEmployees(response.data);
             } 
-            catch(error) 
+            catch (error) 
             {
                 console.log("Error Fetching Employees");
-            }
-            finally
+            } 
+            finally 
             {
                 setLoading(false);
                 setUpdEmp(null);
@@ -41,23 +57,22 @@ const Home = () => {
     // ADD
 
     const addEmployee = (newEmp) => {
-        const updatedEmployees = [...employees, newEmp];
-        const sortedEmployees = updatedEmployees.sort((a, b) => a.eid - b.eid);
+        const updatedEmployees = [...employees,newEmp];
+        const sortedEmployees = updatedEmployees.sort((a,b) => a.eid - b.eid);
         setEmployees(sortedEmployees);
     }
 
     // DELETE
 
-    const handleDelete = async (employee) => 
-    {
-        try
+    const handleDelete = async (employee) => {
+        try 
         {
             const response = await axios.delete(`${URL}/api/employees/${employee.eid}`);
             if(response.data === "DELETED")
             {
                 setEmployees(employees.filter(emp => emp.eid !== employee.eid));
-            }
-            else
+            } 
+            else 
             {
                 console.log("Backend Error");
             }
@@ -70,21 +85,20 @@ const Home = () => {
 
     // GET BY ID (Getting Employee By Id into updEmp,then sending it to the EmployeeForm)
 
-    const handleEdit = async (employee) => 
-    {
+    const handleEdit = async (employee) => {
         try 
         {
             const response = await axios.get(`${URL}/api/employees/${employee.eid}`);
             if(response.data.length === 0)
             {
                 console.log("Backend Error");
-            }
-            else
+            } 
+            else 
             {
                 setUpdEmp(response.data);
             }
-        }
-        catch(error) 
+        } 
+        catch (error) 
         {
             console.log("Error Fetching Employee By Id");
         }
@@ -105,8 +119,8 @@ const Home = () => {
             </div>
             <div className='empDiv'>
                 <div className="employees">
-                    {loading ? (<p>Loading...</p>) : employees.length === 0 ? (<p>Database is Empty</p>) : (
-                        employees && employees.map((employee) => (
+                    {loading ? (<p>Loading...</p>) : employees.length === 0 ? (<p>Database is Empty</p>) : filteredEmployees.length === 0 ? (<p>No Matching Employees</p>) : (
+                        filteredEmployees.map((employee) => (
                             <div className="employee-details" key={employee.eid}>
                                 <div className='empContent'>
                                     <div id='empID'>
@@ -120,7 +134,7 @@ const Home = () => {
                                 <div className='upd'>
                                     <span className="editClr" onClick={() => handleEdit(employee)}>Edit</span>
                                     <span> | </span>
-                                    <span className="delClr" onClick={() => handleDelete(employee)}>Delete</span>   
+                                    <span className="delClr" onClick={() => handleDelete(employee)}>Delete</span>
                                 </div>
                             </div>
                         ))

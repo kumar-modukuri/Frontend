@@ -53,6 +53,36 @@ header .container
   margin: 0 5%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.search-about-container 
+{
+  display: flex;
+  gap: 60px;
+}
+
+.search-wrapper 
+{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-bar 
+{
+  margin: 0px;
+  padding: 10px;
+  max-width: 200px;
+  max-height: 32px;
+  outline: none;
+}
+
+.search-btn 
+{
+  max-width: 26px;
+  max-height: 26px;
+  cursor: pointer;
 }
 
 header a 
