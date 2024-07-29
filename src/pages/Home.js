@@ -12,8 +12,7 @@ const Home = ({ searchedEmp }) => {
 
     // Backend API Endpoint
 
-    // const URL = "https://rajkumar-backend-api.onrender.com";
-    const URL = "http://localhost:8080";
+    const URL = "https://rajkumar-backend-api.onrender.com";
 
     // Filtering By Name
 
