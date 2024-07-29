@@ -122,8 +122,8 @@ const Home = ({ searchedEmp }) => {
                 <div className="employees">
                     {loading ? (<p>Loading...</p>) : employees.length === 0 ? (<p>Database is Empty</p>) : filteredEmployees.length === 0 ? (<p>No Matching Employees</p>) : (
                         filteredEmployees.map((employee) => (
-                            <Link to={`/${employee.eid}`} key={employee.eid} className="employee-details">
-                                <div className='empContent'>
+                            <div className="employee-details">
+                                <Link to={`/${employee.eid}`} key={employee.eid} className='empContent'>
                                     <div id='empID'>
                                         <h4 className='huge'>{employee.eid}</h4>
                                     </div>
@@ -131,13 +131,13 @@ const Home = ({ searchedEmp }) => {
                                         <p><strong>Name : </strong>{employee.ename}</p>
                                         <p><strong>Role : </strong>{employee.role}</p>
                                     </div>
-                                </div>
+                                </Link>
                                 <div className='upd'>
                                     <span className="editClr" onClick={() => handleEdit(employee)}>Edit</span>
                                     <span> | </span>
                                     <span className="delClr" onClick={() => handleDelete(employee)}>Delete</span>
                                 </div>
-                            </Link>
+                            </div>
                         ))
                     )}
                 </div>
