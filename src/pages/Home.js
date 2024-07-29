@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import EmployeeForm from '../components/EmployeeForm';
 
 const Home = ({ searchedEmp }) => {
@@ -11,7 +12,8 @@ const Home = ({ searchedEmp }) => {
 
     // Backend API Endpoint
 
-    const URL = "https://rajkumar-backend-api.onrender.com";
+    // const URL = "https://rajkumar-backend-api.onrender.com";
+    const URL = "http://localhost:8080";
 
     // Filtering By Name
 
@@ -121,7 +123,7 @@ const Home = ({ searchedEmp }) => {
                 <div className="employees">
                     {loading ? (<p>Loading...</p>) : employees.length === 0 ? (<p>Database is Empty</p>) : filteredEmployees.length === 0 ? (<p>No Matching Employees</p>) : (
                         filteredEmployees.map((employee) => (
-                            <div className="employee-details" key={employee.eid}>
+                            <Link to={`/${employee.eid}`} key={employee.eid} className="employee-details">
                                 <div className='empContent'>
                                     <div id='empID'>
                                         <h4 className='huge'>{employee.eid}</h4>
@@ -136,7 +138,7 @@ const Home = ({ searchedEmp }) => {
                                     <span> | </span>
                                     <span className="delClr" onClick={() => handleDelete(employee)}>Delete</span>
                                 </div>
-                            </div>
+                            </Link>
                         ))
                     )}
                 </div>

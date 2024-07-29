@@ -124,7 +124,7 @@ header a
 {
   display: grid;
   grid-template-columns: 28% 68%;
-  column-gap: 4%;
+  column-gap: 5%;
   margin: 0 5%;
   height: 80vh;
   align-items: center;
@@ -142,8 +142,17 @@ header a
 
 .employees 
 {
-  height: 100%;
   margin: 10px;
+}
+
+.employees a
+{
+  text-decoration: none;
+}
+
+.employees :hover
+{
+  cursor: pointer;
 }
 
 /* About Page Layout */
@@ -312,6 +321,7 @@ button:hover
 {
   font-size: 30px;
   color: var(--primary);
+  margin: 0px;
 }
 
 .create 
