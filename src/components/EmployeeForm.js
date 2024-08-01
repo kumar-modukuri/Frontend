@@ -6,10 +6,12 @@ const EmployeeForm = ({employeeToUpdate,addEmp,updEmployee}) => {
     const [ename,setEname] = useState("");
     const [role,setRole] = useState("");
     const [error,setError] = useState("");
+    const [color,setColor] = useState("");
 
     // Backend API Endpoint
 
-    const URL = "https://rajkumar-backend-api.onrender.com";
+    // const URL = "https://rajkumar-backend-api.onrender.com";
+    const URL = "http://localhost:8080";
 
     // Enters the data of the employeeToUpdate into the Form after clicking Edit Button
 
@@ -47,6 +49,7 @@ const EmployeeForm = ({employeeToUpdate,addEmp,updEmployee}) => {
 
         if(employee.eid === "" || employee.ename === "" || employee.role === "")
         {
+            setColor("red");
             setError("Enter All Fields");
             errorClear();
         }
@@ -79,6 +82,7 @@ const EmployeeForm = ({employeeToUpdate,addEmp,updEmployee}) => {
                         setEid("");
                         setEname("");
                         setRole("");
+                        setColor("green");
                         setError(employee.ename+" Added");
                         errorClear();
                     }
@@ -88,16 +92,19 @@ const EmployeeForm = ({employeeToUpdate,addEmp,updEmployee}) => {
                         setEid("");
                         setEname("");
                         setRole("");
+                        setColor("green");
                         setError(employee.eid+" Updated");
                         errorClear();
                     }
                     else if(response.data === "EXISTED")
                     {
+                        setColor("red");
                         setError("ID Already Exists");
                         errorClear();
                     }
                     else if(response.data === "NOT FOUND")
                     {
+                        setColor("red");
                         setError("ID Not Found");
                         errorClear();
                     }
@@ -113,6 +120,7 @@ const EmployeeForm = ({employeeToUpdate,addEmp,updEmployee}) => {
             }
             else
             {
+                setColor("red");
                 setError("0 < ID < 1000");
                 errorClear();
             }
@@ -154,7 +162,7 @@ const EmployeeForm = ({employeeToUpdate,addEmp,updEmployee}) => {
                     <button onClick={(e) => handleClick(e,"UPDATE")}>Update</button>
                 </div>
             </form>
-            <div className="error">{error}</div>
+            <div className="error" style={{color}}>{error}</div>
         </div>
     );
 }

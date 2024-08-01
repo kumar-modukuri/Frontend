@@ -278,7 +278,6 @@ button:hover
 
 .error 
 {
-  color: var(--error);
   display: flex;
   text-align: center;
   font-weight: 500;
