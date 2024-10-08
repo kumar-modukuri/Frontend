@@ -20,12 +20,21 @@ const Navbar = ({ searched }) => {
                         <h2 className='titleMain'>MY PROJECT</h2>
                     </Link>
                 </div>
-                <div className='search-about-container'>
-                    {isHomePage && (<input className='search-bar' placeholder='Search...' onChange={(e) => setInputValue(e.target.value)} value={inputValue}/>)}
-                    <Link to="/about">
-                        <p className='about'>About</p>
-                    </Link>
-                </div>
+                <div className="search-about-container">
+					{isHomePage && (
+						<input
+							className="search-bar"
+							placeholder="Search..."
+							onChange={(e) => setInputValue(e.target.value)}
+							value={inputValue}
+						/>
+					)}
+					{isHomePage && (
+						<Link to="/about">
+							<p className="about">About</p>
+						</Link>
+					)}
+				</div>
             </div>
         </header>
     );

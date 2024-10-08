@@ -8,7 +8,7 @@ const Details = () => {
 
     // Backend API Endpoint
 
-    const URL = "https://rajkumar-backend-api.onrender.com";
+    const URL = process.env.REACT_APP_API_URL;
 
     useEffect(() => {
         const fetchEmployee = async () => {
@@ -30,7 +30,7 @@ const Details = () => {
             }
         };
         fetchEmployee();
-    },[id]);
+    },[id,URL]);
 
     return (
         <div>

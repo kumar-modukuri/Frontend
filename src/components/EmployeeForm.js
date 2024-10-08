@@ -10,7 +10,7 @@ const EmployeeForm = ({employeeToUpdate,addEmp,updEmployee}) => {
 
     // Backend API Endpoint
 
-    const URL = "https://rajkumar-backend-api.onrender.com";
+    const URL = process.env.REACT_APP_API_URL;
 
     // Enters the data of the employeeToUpdate into the Form after clicking Edit Button
 

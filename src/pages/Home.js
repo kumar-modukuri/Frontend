@@ -12,7 +12,7 @@ const Home = ({ searchedEmp }) => {
 
     // Backend API Endpoint
 
-    const URL = "https://rajkumar-backend-api.onrender.com";
+    const URL = process.env.REACT_APP_API_URL;
 
     // Filtering By Name
 
@@ -53,7 +53,7 @@ const Home = ({ searchedEmp }) => {
             }
         };
         fetchEmployees();
-    }, [temp]);
+    }, [temp,URL]);
 
     // ADD
 
@@ -121,9 +121,9 @@ const Home = ({ searchedEmp }) => {
             <div className='empDiv'>
                 <div className="employees">
                     {loading ? (<p>Loading...</p>) : employees.length === 0 ? (<p>Database is Empty</p>) : filteredEmployees.length === 0 ? (<p>No Matching Employees</p>) : (
-                        filteredEmployees.map((employee) => (
-                            <div className="employee-details">
-                                <Link to={`/${employee.eid}`} key={employee.eid} className='empContent'>
+                        filteredEmployees.map((employee,index) => (
+                            <div className="employee-details" key={index}>
+                                <Link to={`/${employee.eid}`} className='empContent'>
                                     <div id='empID'>
                                         <h4 className='huge'>{employee.eid}</h4>
                                     </div>
