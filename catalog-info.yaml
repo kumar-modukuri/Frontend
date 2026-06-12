@@ -12,5 +12,5 @@ metadata:
 spec:
   type: website
   lifecycle: experimental
-  owner: user:guest
+  owner: user:default/raj
   system: employee-management-system
