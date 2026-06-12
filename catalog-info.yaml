@@ -1,0 +1,16 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+
+metadata:
+  name: employee-frontend
+  title: Employee Frontend
+  description: React frontend for Employee Management System
+
+  annotations:
+    github.com/project-slug: kumar-modukuri/Frontend
+
+spec:
+  type: website
+  lifecycle: experimental
+  owner: user:guest
+  system: employee-management-system
